@@ -30,7 +30,7 @@ The code is performing follwoing things:
 
  
 
-# How to run
+# How to Build and Run
 
 Please update the MySQL and SFTP server configurations before running the application in the application.properties file.
 example:
@@ -49,5 +49,13 @@ sftp.user=demo
 sftp.password=password 
 sftp.remote.directory= \data 
 sftp.local.directory.download= ${java.io.tmpdir}\csvDownload 
+```
+Build Command:
+```
+gradle clean build
+```
+Run Command:
+```
+java -jar Assignment2SFTP-0.0.1-SNAPSHOT.jar
 ```
 
