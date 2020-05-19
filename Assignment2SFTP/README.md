@@ -36,18 +36,18 @@ Please update the MySQL and SFTP server configurations before running the applic
 example:
 
 MySQL:
-
+```
 spring.datasource.url=jdbc:mysql://localhost:3306/testdb?useSSL=false 
 spring.datasource.username=root 
 spring.datasource.password=Test#123 
-
+```
 SFTP:
-
+```
 sftp.host=127.0.0.1 
 sftp.port=22 
 sftp.user=demo 
 sftp.password=password 
 sftp.remote.directory= \data 
 sftp.local.directory.download= ${java.io.tmpdir}\csvDownload 
-
+```
 
