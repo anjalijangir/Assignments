@@ -27,7 +27,7 @@ jar {
   manifest {
     attributes(
       'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
-      'Main-Class': 'com.assignment.one.Main'
+      'Main-Class': 'com.assignment.three.Main'
     )
   }
 }
