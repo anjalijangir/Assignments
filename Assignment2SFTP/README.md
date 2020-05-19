@@ -17,3 +17,37 @@ Result Time,Granularity Period,Object Name,Cell ID,CallAttemps
 2016-10-21 13:45,15,"LIMRNC03/BSC6900UCell:Label=LHU29267c1_Las_Moras”,99267,30
 
 2016-10-21 3:45,15,"LIMRNC03/BSC6900UCell:Label=LHU29277c1_Huanuco_Centro”,29277,40
+
+# Solution
+
+The code is performing follwoing things:
+
+1. Creating a spring scheduler which runs every 15 mins to download the new files
+2. Creating a SFTP session
+3. Getting file list from sftp remote directory and checking if the file alredy exist in MySQL file_record table.
+4. Downloading the unprocessed files and create entry in MySQL file_record table.
+5. For each download file create a runnable task to parse the csv file and save the record into the MySQL csv_data table.
+
+ 
+
+# How to run
+
+Please update the MySQL and SFTP server configurations before running the application in the application.properties file.
+example:
+
+MySQL:
+
+spring.datasource.url=jdbc:mysql://localhost:3306/testdb?useSSL=false
+spring.datasource.username=root
+spring.datasource.password=Test#123
+
+SFTP:
+
+sftp.host=127.0.0.1
+sftp.port=22
+sftp.user=demo
+sftp.password=password
+sftp.remote.directory= \data
+sftp.local.directory.download= ${java.io.tmpdir}\csvDownload
+
+
